@@ -6,14 +6,14 @@ function init(url){
 }
 //注册socketOpen监听
 function registerOpenHandler(handlerFunction){
-    socket.onOpen=()=>{
+    socket.onopen=()=>{
         console.log('open');
         handlerFunction();
     }
 }
 // 注册接收消息监听
 function registerMessageHandler(handlerFunction){
-    socket.onMessage=(e)=>{
+    socket.onmessage=(e)=>{
         console.log("message",e.data);
         let data=JSON.parse(e.data);
         handlerFunction(data);
